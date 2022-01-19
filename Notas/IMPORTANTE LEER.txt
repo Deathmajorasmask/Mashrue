@@ -1,0 +1,45 @@
+***USUARIO***
+Deathmajorasmask
+***Contraseña***
+Password
+
+1.- Correr el script de la base de datos (el archivo llamado Script_Mashrue.sql)
+Al correrlo se creara una base de datos con las tablas, stores procedures y cosas que son usadas
+Tip: Crear procedimientos para que no actuen directamente en la BD
+
+2.- El proyecto fue destinado para el compilador de Visual Studio 2015
+
+3.- Correr y probar primeramente las opciones de Administrador que se encuentra en la parte inferior derecha, esto abrira un panel y de ahi agregar agentes, compañias, etc...
+Nota: el Usuario es Deathmajoras con la contraseña password
+
+4.- Los archivos mas imporantes son: 
+>Funciones .vb (Solo son las funciones que no se encuentren relacionadas con la base de datos, por ejemplo; comportamiento de la interfaz, códificación de contraseñas, etc.)
+>EnlaceDB (Todas las funciones relacionadas con la base de datos que extraigan la información de la BD)
+NOTA: Todo lo relacionado con la configuración de la BD se encuentra aqui.
+NOTA 2: Si quieres mandarlas a llamar tendras que usar un puntero; por ejemplo (Dim AgregarForm As New EnlaceBD)
+NOTA 3: Programa las funciones de agregar, eliminar, consultar y eso en este archivo, por que solo por aqui podras hacer contacto con la base de datos)
+
+***NOTA IMPORTANTE***
+Posiblemente marque error en System.Configuration la razón es que no se han includio en referencias estas bibliotecas para su uso, para incluirlas ir a la ventana de Solution Explorer -> References -> add references. Aqui incluir System.Configuration buscandolo entre la lista y marcandolo, ver las imagenes SS_System.Configuration01 y 02 incluidas en la carpeta de Notas
+
+>App.config 
+(Se encuentra toda la configuración de la Aplicación)
+Donde esta <add name="desaoper" ..... [sigue]
+Esa es la variable que maneja la conexion, ahi lo rellenaras con los valores correspondientes;
+
+<add name="desaoper" connectionString="data source= AQUI SE COLOCA EL NOMBRE DE USUARIO DE SQL ;Initial Catalog= AQUI EL NOMBRE DE LA BASE DE DATOS ;persist security info=True;Integrated Security=SSPI" providerName="System.Data.SqlClient" />
+
+
+Ejemplo:
+<add name="desaoper" connectionString="data source=PC ;Initial Catalog=Seguros1616743;persist security info=True;Integrated Security=SSPI" providerName="System.Data.SqlClient" />
+
+Mi usuario es PC, la base de datos se llama Seguros1616743 y no tengo password por que uso el Autentificador de Windows (El combo box que esta al estran en SQL Server)
+
+Cambiar donde dice:
+<add key="admin" value="PC" />
+    <add key="ServerNom" value="Seguros1616743" />
+    <add key="DataBaseNom" value="PC" />
+
+por tus valores (solo la parte de value), en mi caso se llama PC el usuario administrador, el nombre de la base de datos es Seguros1616743 Y el DataBaseNom pon el nombre del usuario
+
+NOTA: Si no te sabes el usuario, abre My Sql y donde logeas ahi dice tu Username y tu password (si es que no usas Autentificador de Windows 
