@@ -2,7 +2,7 @@
 <br />
 <p align="center">
  <a href="https://github.com/Deathmajorasmask/Mashrue">
-    <img src="Images/agenda_logo.png" alt="Logo" width="80" height="80">
+    <img src="images/Mashrue_logo.png" alt="Logo" width="80" height="80">
  </a>
 
   <h3 align="center">Mashrue</h3>
